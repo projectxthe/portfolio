@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sadat Ali | Student, science learner, web beginner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef4fb;--grid:#d3e0f0;--paper:#fbfdff;--ink:#12233d;--muted:#51637f;
+  --accent:#2451e6;--accent-ink:#fff;--mark:#ffd23f;--line:#c4d3e6;
+  --sans:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --hand:"Caveat","Comic Sans MS",cursive;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0d1626;--grid:#182741;--paper:#122039;--ink:#e6eefc;--muted:#9db0cf;--accent:#8aa6ff;--accent-ink:#0d1626;--line:#26385a}
+}
+:root[data-theme="dark"]{--bg:#0d1626;--grid:#182741;--paper:#122039;--ink:#e6eefc;--muted:#9db0cf;--accent:#8aa6ff;--accent-ink:#0d1626;--line:#26385a}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);color:var(--ink);background-color:var(--bg);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;line-height:1.65;font-size:1.05rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px}
+.brand{font-weight:800;text-decoration:none;font-size:1.1rem}
+nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+nav a{text-decoration:none;padding:6px 10px;border-radius:8px;font-size:.95rem;color:var(--muted)}
+nav a:hover{color:var(--ink);background:var(--paper)}
+#theme{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px;width:38px;height:34px;font-size:1rem;cursor:pointer}
+.hero{padding:64px 0 48px;display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
+.hero h1{font-size:clamp(3rem,10vw,6rem);line-height:.95;margin:0 0 18px;font-weight:800;letter-spacing:-.03em}
+.hero h1 span{background:linear-gradient(transparent 62%,var(--mark) 62%,var(--mark) 92%,transparent 92%);padding:0 4px}
+.note{font-family:var(--hand);font-size:1.7rem;color:var(--accent);margin:0 0 10px;transform:rotate(-2deg);display:inline-block}
+.lead{max-width:34rem;color:var(--muted);margin:0 0 26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.main{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-2px)}
+.atom-wrap{position:relative;width:100%;max-width:320px;justify-self:center}
+.atom{display:block;width:100%}
+.frame{position:absolute;left:50%;top:50%;width:58%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;background:var(--mark);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.atom .orbit{fill:none;stroke:var(--ink);stroke-width:2}
+.atom .nuc{fill:var(--accent)}
+.atom .el{fill:var(--mark);stroke:var(--ink);stroke-width:2}
+.spin{transform-origin:150px 150px;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+section{padding:44px 0}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);margin:0 0 20px;letter-spacing:-.02em}
+.page{background:var(--paper);border:2px solid var(--ink);border-radius:14px;padding:26px 28px 26px 44px;position:relative;box-shadow:6px 6px 0 var(--ink)}
+.page::before{content:"";position:absolute;left:24px;top:0;bottom:0;border-left:2px solid #e2566b;opacity:.55}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:28px}
+.about p{margin:0 0 14px;max-width:38rem}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;align-content:start}
+dt{color:var(--muted)}dd{margin:0;font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:var(--paper);border:2px solid var(--ink);border-radius:12px;padding:20px}
+.card h3{margin:0 0 6px;font-size:1.25rem}
+.card p{margin:0;color:var(--muted);font-size:1rem}
+.card.dash{border-style:dashed;background:transparent}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.tags span{background:var(--mark);color:#12233d;font-weight:600;font-size:.85rem;padding:2px 10px;border-radius:99px}
+.fact{margin-top:22px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+#factText{font-family:var(--hand);font-size:1.7rem;line-height:1.2;margin:0;flex:1 1 260px;min-height:2.4em}
+button.btn{font:inherit;font-weight:600;cursor:pointer;background:var(--paper);color:var(--ink)}
+.contact p{max-width:36rem;margin:0 0 16px}
+footer{border-top:1px solid var(--line);padding:26px 0 34px;color:var(--muted);font-size:.95rem}
+@media (max-width:760px){
+  .hero,.about{grid-template-columns:1fr}
+  .hero{padding-top:36px}
+  .atom-wrap{max-width:250px;order:-1;justify-self:start}
+  nav a{padding:6px 7px;font-size:.88rem}
+  .page{padding:22px 18px 22px 38px}
+}
+@media (prefers-reduced-motion:reduce){.spin{animation:none}html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><a href="https://www.fontspace.com/category/cursive"><img src="https://see.fontimg.com/api/rf5/O8L8/MWJlMWZhYjI4YWY3NGViYTgyYWFjZWViMTk1ZmEzNTEudHRm/U2FkYXQgQWxp/tomatoes.png?r=fs&h=65&w=1000&fg=000000&bg=FFFFFF&tb=1&s=65" alt="SADAT ALI"></a></a>
+    <nav aria-label="Main">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#science">Science</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      <button id="theme" type="button" aria-label="Switch light or dark theme">🌙</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+  <div class="hero">
+    <div>
+      <p class="note">Hello, I'm</p>
+      <h1><span>Sadat Ali</span></h1>
+      <p class="lead">I'm a Class 9 student at Mount Litera Zee School, Jangipur. I love science, and I'm teaching myself to build websites with HTML, CSS and JavaScript.</p>
+      <div class="btns">
+        <a class="btn main" href="#projects">See my work</a>
+        <a class="btn" href="#contact">Say hello</a>
+      </div>
+    </div>
+    <div class="atom-wrap">
+    <svg class="atom" viewBox="0 0 300 300" aria-hidden="true">
+      <g class="spin">
+        <ellipse class="orbit" cx="150" cy="150" rx="120" ry="42"/>
+        <ellipse class="orbit" cx="150" cy="150" rx="120" ry="42" transform="rotate(60 150 150)"/>
+        <ellipse class="orbit" cx="150" cy="150" rx="120" ry="42" transform="rotate(120 150 150)"/>
+        <circle class="el" cx="270" cy="150" r="10"/>
+        <circle class="el" cx="90" cy="46" r="10"/>
+        <circle class="el" cx="90" cy="254" r="10"/>
+      </g>
+      <circle class="nuc" cx="150" cy="150" r="20"/>
+    </svg>
+    <div class="frame"><img alt="Sadat Ali resting his chin on his hand and looking up, wearing clear glasses" width="800" height="800" src="img.png"></div>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2>About me</h2>
+    <div class="page about">
+      <div>
+        <p>I'm curious about how things work, from why ice floats to how a web page appears on a screen.</p>
+        <p>In school I study science, and outside class I practise coding. I write every line myself, using only HTML, CSS and JavaScript, so I understand what each part does.</p>
+      </div>
+      <dl>
+        <dt>School</dt><dd>Mount Litera Zee School</dd>
+        <dt>Class</dt><dd>9</dd>
+        <dt>Town</dt><dd>Jangipur, West Bengal</dd>
+        <dt>Studying</dt><dd>Science</dd>
+        <dt>Coding</dt><dd>HTML, CSS, JavaScript</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>What I'm learning</h2>
+    <div class="cards">
+      <div class="card"><h3>HTML</h3><p>I use it to build the structure of a page: headings, text, images and links.</p></div>
+      <div class="card"><h3>CSS</h3><p>I use it for colours, fonts, layouts that fit phones and computers, and small animations.</p></div>
+      <div class="card"><h3>JavaScript</h3><p>I use it to make pages react when someone clicks, types or scrolls.</p></div>
+    </div>
+  </section>
+
+  <section id="science">
+    <h2>Science I enjoy</h2>
+    <div class="cards">
+      <div class="card"><h3>Physics</h3><p>Motion, light, energy and why things behave the way they do.</p></div>
+      <div class="card"><h3>Chemistry</h3><p>Matter, reactions and what everything around us is made of.</p></div>
+      <div class="card"><h3>Biology</h3><p>Cells, living things and how the human body works.</p></div>
+    </div>
+    <div class="fact">
+      <p id="factText" aria-live="polite">Press the button for a science fact.</p>
+      <button class="btn" id="factBtn" type="button">Show a fact</button>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>What I've built</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>This portfolio</h3>
+        <p>My first personal website. It has a light and dark theme, a science fact button, and it works on phones.</p>
+        <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+      </div>
+      <div class="card dash">
+        <h3>Next project</h3>
+        <p>A science quiz is next. I'll add it here when it's finished.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Say hello</h2>
+    <div class="page">
+      <p>I'm always happy to talk about science, coding or school projects. Find me at Mount Litera Zee School in Jangipur, West Bengal.</p>
+       <a class="btn main" href="mailto:s23ultraisgood@gmail.com">Email me</a> 
+      <a class="btn main" href="#top">Back to top</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Sadat Ali. Built by hand with HTML, CSS and JavaScript.</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  function isDark(){var t=root.getAttribute('data-theme');if(t)return t==='dark';return window.matchMedia('(prefers-color-scheme: dark)').matches}
+  function paint(){btn.textContent=isDark()?'☀️':'🌙'}
+  try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s)}catch(e){}
+  paint();
+  btn.addEventListener('click',function(){
+    var n=isDark()?'light':'dark';root.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n)}catch(e){}
+    paint();
+  });
+
+  var facts=[
+    'Water expands when it freezes, so ice floats on water.',
+    'A day on Venus is longer than a year on Venus.',
+    'Light from the Sun takes about 8 minutes to reach Earth.',
+    'Diamond and graphite are both made of pure carbon.',
+    'Your body has tens of trillions of cells.',
+    'Sound cannot travel through empty space.'
+  ],last=-1,out=document.getElementById('factText');
+  document.getElementById('factBtn').addEventListener('click',function(){
+    var i;do{i=Math.floor(Math.random()*facts.length)}while(i===last);
+    last=i;out.textContent=facts[i];
+  });
+})();
+</script>
+</body>
+</html>
